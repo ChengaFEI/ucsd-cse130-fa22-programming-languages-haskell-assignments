@@ -1,0 +1,34 @@
+name:                hw3-fold
+version:             0.1.0.0
+synopsis:            Starter code for cse130 homework/03-fold
+license:             MIT
+license-file:        LICENSE
+author:              Ranjit Jhala
+maintainer:          jhala@cs.ucsd.edu
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.10
+
+Library
+  ghc-options:         -W +RTS -A64m -n2m -qg -RTS
+  exposed-modules:     Hw3 
+  build-depends:       array,
+                       base
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite test
+  default-language: Haskell98
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   tests
+  ghc-options:      -threaded +RTS -A64m -n2m -qg -RTS
+  main-is:          Test.hs
+  other-modules:    Common
+  build-depends:    base,
+                    directory,
+                    filepath,
+                    process,
+                    random,
+                    tasty,
+                    tasty-hunit,
+                    hw3-fold 

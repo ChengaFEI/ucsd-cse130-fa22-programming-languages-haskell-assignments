@@ -1,0 +1,19 @@
+# For more information, see: http://docs.haskellstack.org/en/stable/yaml_configuration.html
+
+# Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
+resolver: lts-18.28
+
+# Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
+extra-deps:
+- clock-0.7.2
+
+# Allow users who don't own the .stack dir to use stack. (This is important for
+# running on ieng6)
+allow-different-user: true
+
+#      -O0: turn off optimizations
+# -dynamic: stop linker from static linking, which is slow. we don't need portability
+#       -j: use more cores
+ghc-options:
+  "$locals": -O0 -dynamic -j
+

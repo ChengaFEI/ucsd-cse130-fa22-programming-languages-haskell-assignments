@@ -1,0 +1,42 @@
+name:                fa22-final
+version:             0.1.0.0
+synopsis:            Starter code for CSE130 Fall 2022 Final
+license:             MIT
+license-file:        LICENSE
+author:              Tristan Knoth 
+category:            Language
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+
+Library
+  ghc-options:         -W -threaded
+  exposed-modules:     BHeap
+
+  -- other-extensions:
+  build-depends:       base,
+                       array,
+                       mtl,
+                       directory,
+                       QuickCheck
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite test
+  default-language: Haskell98
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   tests
+  ghc-options:      -threaded
+  main-is:          Test.hs
+  build-depends:    base,
+                    mtl,
+                    directory,
+                    filepath,
+                    QuickCheck,
+                    tasty,
+                    tasty-hunit,
+                    tasty-quickcheck,
+                    process,
+                    fa22-final
+  other-modules:    Common
